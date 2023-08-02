@@ -9,3 +9,12 @@
 - forceConsistentCasingInFileNames: 대소문자 무조건 구별
 - strict: strict mode
 - skipLibCheck: 다운받은 모듈 d.ts 파일 검사 skip
+
+## Naming rule
+
+interface IProps {}
+type TType = string
+enum EHello {
+Left,
+Right
+}
