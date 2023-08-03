@@ -14,3 +14,7 @@ try {
 } catch (error) {
   (error as Error).message;
 }
+
+function numOrStr(a: number | string) {
+  (a as number).toFixed(1);
+}
