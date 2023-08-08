@@ -35,3 +35,14 @@ type PickCustom<T, K extends keyof T> = {
 const pick2: PickCustom<ProfilePartial, "name"> = {
   name: "sf",
 };
+
+const omit: Omit<ProfilePartial, "name"> = {
+  phone: 1,
+  married: false,
+};
+
+type omitCustom<T, S> = Pick<T, Exclude<keyof T, S>>;
+const omit2: omitCustom<ProfilePartial, "name"> = {
+  phone: 1,
+  married: false,
+};
