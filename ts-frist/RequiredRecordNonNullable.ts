@@ -20,3 +20,22 @@ const me2: RequiredCustom<ProfileTest1> = {
   phone: 0,
   married: true,
 };
+
+// Record
+interface Obj {
+  [key: string]: number;
+}
+
+const recode: Obj = {
+  name: 1,
+  wow: 2,
+};
+
+const recode2: Record<string, number> = {
+  name: 1,
+  wow: 2,
+};
+
+type RecordCustom<T extends keyof any, S> = {
+  [P in T]: T;
+};
