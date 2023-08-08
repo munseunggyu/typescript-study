@@ -55,7 +55,19 @@ interface Arr<T> {
   forEach(callback: (item: T) => void): void;
   map<S>(callback: (item: T) => S): S[];
   filter<S extends T>(callback: (item: T) => item is S): S[];
+
+  find<S extends T>(callback: (item: T) => T): S;
+  find<S extends T>(
+    predicate: (value: T, index: number, obj: T[]) => value is S,
+    thisArg?: any
+  ): S | undefined;
+  find(
+    predicate: (value: T, index: number, obj: T[]) => unknown,
+    thisArg?: any
+  ): T | undefined;
 }
+const findArr = [1, 2, 3];
+const filterArr = findArr.find((val) => val);
 
 const arr7: Arr<string | number> = [1, "as", 3];
 const 제네릭필터 = arr7.filter(
@@ -78,3 +90,7 @@ arr5.forEach((item) => {
 arr5.map((item) => item);
 
 const arr6: Arr<boolean> = [true, false];
+
+interface Filter {
+  forEach(callback: (item: string) => void): void;
+}
