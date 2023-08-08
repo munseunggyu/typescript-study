@@ -23,3 +23,15 @@ type P<T> = {
 const msg2: P<ProfilePartial> = {
   name: "hi",
 };
+
+const pick: Pick<ProfilePartial, "name"> = {
+  name: "sf",
+};
+
+type PickCustom<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+
+const pick2: PickCustom<ProfilePartial, "name"> = {
+  name: "sf",
+};
