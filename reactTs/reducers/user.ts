@@ -9,10 +9,12 @@ import {
 interface IinitialState {
   isLoggingIn: boolean;
   data: LoginSuccessData | null;
+  loading: boolean;
 }
 const initialState = {
   isLoggingIn: false,
   data: null,
+  loading: false,
 };
 type LoginActions = LoginSuccessAction | LogoutAction | LoginRequestAction;
 const userReducer: Reducer<IinitialState, LoginActions> = (

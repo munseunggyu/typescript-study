@@ -13,6 +13,7 @@ const initialState = {
   user: {
     isLoggingIn: true,
     data: null,
+    loading: false,
   },
   posts: [],
 };
@@ -64,3 +65,7 @@ console.log("2nd", store.getState());
 //
 // store.dispatch(logOut());
 // console.log('5th', store.getState());
+
+// react-redux
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
